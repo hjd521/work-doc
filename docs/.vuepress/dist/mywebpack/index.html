@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>webpack总结 | ui-component-知识点总结</title>
+    <meta name="description" content="Just playing around">
+    <meta name="generator" content="VuePress 1.3.1">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.8708e9a5.css" as="style"><link rel="preload" href="/assets/js/app.b097fbac.js" as="script"><link rel="preload" href="/assets/js/2.d302756d.js" as="script"><link rel="preload" href="/assets/js/9.b15caeed.js" as="script"><link rel="prefetch" href="/assets/js/10.30ee625f.js"><link rel="prefetch" href="/assets/js/11.af8d6ffe.js"><link rel="prefetch" href="/assets/js/3.b783d73d.js"><link rel="prefetch" href="/assets/js/4.af914f8a.js"><link rel="prefetch" href="/assets/js/5.c9a098d3.js"><link rel="prefetch" href="/assets/js/6.faa9a100.js"><link rel="prefetch" href="/assets/js/7.36552565.js"><link rel="prefetch" href="/assets/js/8.e404da89.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.8708e9a5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">ui-component-知识点总结</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/library/" class="nav-link">
+  package相关
+</a></div><div class="nav-item"><a href="/mywebpack/" class="nav-link router-link-exact-active router-link-active">
+  webpack相关
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/library/" class="nav-link">
+  package相关
+</a></div><div class="nav-item"><a href="/mywebpack/" class="nav-link router-link-exact-active router-link-active">
+  webpack相关
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/mywebpack/" class="active sidebar-link">entry and output</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/mywebpack/#entry" class="sidebar-link">entry</a></li><li class="sidebar-sub-header"><a href="/mywebpack/#命名" class="sidebar-link">命名</a></li><li class="sidebar-sub-header"><a href="/mywebpack/#出口output" class="sidebar-link">出口output</a></li><li class="sidebar-sub-header"><a href="/mywebpack/#output相关的常用插件" class="sidebar-link">output相关的常用插件</a></li><li class="sidebar-sub-header"><a href="/mywebpack/#hash，chunkhash，contenthash的区别" class="sidebar-link">hash，chunkhash，contenthash的区别</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="webpack总结"><a href="#webpack总结" class="header-anchor">#</a> webpack总结</h1> <ul><li><p>entry: 入口，webpack执行构建的第一步将从entry开始递归构建，可以理解为输入。</p></li> <li><p>output： 出口，webpack构建的bundles输出的地方。</p></li></ul> <h2 id="entry"><a href="#entry" class="header-anchor">#</a> entry</h2> <p>string|array|object|function</p> <ul><li>string：应用程序的起点入口，</li> <li>array: 数组的每一项都会执行切只会生成一个chunk，当结合output.library选项时，则只导出最后一项。</li> <li>object：适用于多页面应用，会有多个起点，则每个键(key)会是 chunk 的名称，该值描述了 chunk 的入口起点。</li> <li>function：入口不是静态值时候，我们可以指定一个函数通过返回来指定入口</li></ul> <div class="language-js extra-class"><pre class="language-js"><code>entry<span class="token operator">:</span> <span class="token string">'../app.js'</span>
+
+entry<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'../index.js'</span><span class="token punctuation">,</span> <span class="token string">'../main.js'</span><span class="token punctuation">]</span>
+
+entry<span class="token operator">:</span> <span class="token punctuation">{</span>
+  app<span class="token operator">:</span> <span class="token string">'../app.js'</span><span class="token punctuation">,</span>
+  web<span class="token operator">:</span> <span class="token string">'../web.js'</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+<span class="token function-variable function">entry</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token string">'./app.js'</span>
+
+<span class="token function-variable function">entry</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token function">res</span><span class="token punctuation">(</span><span class="token string">'./app.js'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></div><h2 id="命名"><a href="#命名" class="header-anchor">#</a> 命名</h2> <p>entry中字符串，数组都是对象的简写形式。entry，数组时候默认生成的chunk为main。当为对象时候每个key为chunk的名称</p> <h2 id="出口output"><a href="#出口output" class="header-anchor">#</a> 出口output</h2> <p>output属性决定webpack在哪里输出他的bundles，以及如何命名这些文件。</p> <ul><li>filename: '输出bundle的名称'可以通过模版语法指定chunk或者name。</li> <li>path：bundle的输出路径可以利用path.resolve()或者相对绝对路径来指定。</li> <li>publicPath: 指定资源的访问路径，可以通过其设置cdn。</li></ul> <div class="language-js extra-class"><pre class="language-js"><code>publicPath<span class="token operator">:</span> <span class="token string">&quot;https://cdn.example.com/assets/&quot;</span><span class="token punctuation">,</span> <span class="token comment">// CDN（总是 HTTPS 协议）</span>
+publicPath<span class="token operator">:</span> <span class="token string">&quot;//cdn.example.com/assets/&quot;</span><span class="token punctuation">,</span> <span class="token comment">// CDN (协议相同)</span>
+publicPath<span class="token operator">:</span> <span class="token string">&quot;/assets/&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 相对于服务(server-relative)</span>
+publicPath<span class="token operator">:</span> <span class="token string">&quot;assets/&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 相对于 HTML 页面</span>
+publicPath<span class="token operator">:</span> <span class="token string">&quot;../assets/&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 相对于 HTML 页面</span>
+publicPath<span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 相对于 HTML 页面（目录相同）</span></code></pre></div><h2 id="output相关的常用插件"><a href="#output相关的常用插件" class="header-anchor">#</a> output相关的常用插件</h2> <ul><li>1，根据特定的html模版自动生成html文件并且引用生成的chunk：html-webpack-plugin</li> <li>2, 清理dist文件夹插件：clean-webpack-plugin</li> <li>3，分离css文件mini-css-extract-plugin。</li></ul> <h2 id="hash，chunkhash，contenthash的区别"><a href="#hash，chunkhash，contenthash的区别" class="header-anchor">#</a> hash，chunkhash，contenthash的区别</h2> <ul><li>hash：针对整个项目的，所有文件的hash值保持一致，只要改变了内容那么所有文件的缓存都会失效。没有起到灵活缓存的作用</li> <li>chunkhash：针对单个chunk，我们在生产环境里把一些公共库和程序入口文件区分开，单独打包构建，接着我们采用chunkhash的方式生成hash值，那么只要我们不改动公共库的代码，就可以保证其hash值不会受影响。由于采用chunkhash，所以项目主入口文件main.js及其对应的依赖文件main.css由于被打包在同一个模块，所以共用相同的chunkhash。这样就会有个问题，只要对应css或则js改变，与其关联的文件hash值也会改变，但其内容并没有改变，所以没有达到缓存意义。</li> <li>contenthash: 针对css来定，可以用上边讲到的mini-css-extract-plugin将css设置为contenthash，解决上述问题。
+首先我们看下设置hash的效果</li> <li>当为hash时候</li></ul> <div class="language-js extra-class"><pre class="language-js"><code>entry<span class="token operator">:</span> <span class="token punctuation">{</span>
+  main<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span><span class="token string">'../src/index.js'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  vender<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'../src/js/feature.js'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+output<span class="token operator">:</span> <span class="token punctuation">{</span>
+  path<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'../dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  filename<span class="token operator">:</span> <span class="token string">&quot;[hash].bundle.js&quot;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+<span class="token number">7</span>ffe7d4b5c650129bc62636c820a5d60<span class="token punctuation">.</span>png   <span class="token number">76.2</span> KiB          <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  
+        <span class="token number">96938e518</span>e345c331da8<span class="token punctuation">.</span>main<span class="token punctuation">.</span>js    <span class="token number">556</span> KiB    main  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  main
+      <span class="token number">96938e518</span>e345c331da8<span class="token punctuation">.</span>vender<span class="token punctuation">.</span>js    <span class="token number">552</span> KiB  vender  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  vender
+                          index<span class="token punctuation">.</span>html  <span class="token number">644</span> bytes          <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  
+                            main<span class="token punctuation">.</span>css   <span class="token number">71</span> bytes    main  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  main
+<span class="token comment">// 这里的main.js 和vender.js的hash值都是一样的。我们改了任何一个文件这个hash值都会随着改变                            </span>
+</code></pre></div><ul><li>当为chunkhash时候</li></ul> <div class="language-js extra-class"><pre class="language-js"><code>output<span class="token operator">:</span> <span class="token punctuation">{</span>
+  path<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'../dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  filename<span class="token operator">:</span> <span class="token string">&quot;[chunkhash].[name].js&quot;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 当为chunkhash时候</span>
+<span class="token number">39</span>b1e128f05b3717777e<span class="token punctuation">.</span>main<span class="token punctuation">.</span>js    <span class="token number">556</span> KiB    main  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  main
+<span class="token number">7</span>ffe7d4b5c650129bc62636c820a5d60<span class="token punctuation">.</span>png   <span class="token number">76.2</span> KiB          <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  
+      <span class="token number">970015</span>a42dcfd539dbf9<span class="token punctuation">.</span>vender<span class="token punctuation">.</span>js    <span class="token number">552</span> KiB  vender  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  vender
+                          index<span class="token punctuation">.</span>html  <span class="token number">644</span> bytes          <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  
+                            main<span class="token punctuation">.</span>css   <span class="token number">71</span> bytes    main  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  main
+<span class="token comment">// 此时main.js和vender.js的hash值就不相同了。</span>
+<span class="token comment">// 这个时候我们改动一下css文件，看这个时候chunkhash会不会变化</span>
+<span class="token number">7</span>ffe7d4b5c650129bc62636c820a5d60<span class="token punctuation">.</span>png   <span class="token number">76.2</span> KiB          <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  
+        <span class="token number">94</span>c3aef25997acdad05a<span class="token punctuation">.</span>main<span class="token punctuation">.</span>js    <span class="token number">556</span> KiB    main  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  main
+      <span class="token number">970015</span>a42dcfd539dbf9<span class="token punctuation">.</span>vender<span class="token punctuation">.</span>js    <span class="token number">552</span> KiB  vender  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  vender
+                          index<span class="token punctuation">.</span>html  <span class="token number">644</span> bytes          <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  
+                            main<span class="token punctuation">.</span>css   <span class="token number">65</span> bytes    main  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  main
+<span class="token comment">// 可以看到man.js的hash值变化了，但是main.js却没有任何改变。这种情况我们怎么解决呐？</span>
+                            
+</code></pre></div><ul><li>当为contenthash时候</li></ul> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token operator">:</span> <span class="token punctuation">{</span>
+  rules<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">{</span>
+      test<span class="token operator">:</span> <span class="token regex">/\.css$/</span><span class="token punctuation">,</span>
+      use<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+              loader<span class="token operator">:</span> MiniCssExtractPlugin<span class="token punctuation">.</span>loader
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+              loader<span class="token operator">:</span> <span class="token string">'css-loader'</span>
+          <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      exclude<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token regex">/node_modules/</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token keyword">new</span> <span class="token class-name">MiniCssExtractPlugin</span><span class="token punctuation">(</span>
+    <span class="token punctuation">{</span>
+        filename<span class="token operator">:</span> <span class="token string">'[name].css'</span><span class="token punctuation">,</span>
+        chunkFilename<span class="token operator">:</span> <span class="token string">'[contenthash]_[name].css'</span><span class="token punctuation">,</span>
+        ignoreOrder<span class="token operator">:</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+<span class="token punctuation">]</span>
+<span class="token comment">// 此时</span>
+Asset       Size  Chunks             Chunk Names
+<span class="token number">6e18</span>c6225511a508ae47_common<span class="token punctuation">.</span>css   <span class="token number">43</span> bytes       <span class="token number">0</span>  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  common
+ <span class="token number">738e49</span>ffe8fedfd1f1a6<span class="token punctuation">.</span>common<span class="token punctuation">.</span>js   <span class="token number">70.2</span> KiB       <span class="token number">0</span>  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  common
+<span class="token number">7</span>ffe7d4b5c650129bc62636c820a5d60<span class="token punctuation">.</span>png   <span class="token number">76.2</span> KiB          <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  
+   b5bd448011ae04c44ad9<span class="token punctuation">.</span>main<span class="token punctuation">.</span>js    <span class="token number">1.5</span> KiB       <span class="token number">1</span>  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  main
+ b8b76d60baccba2a8b74<span class="token punctuation">.</span>vender<span class="token punctuation">.</span>js   <span class="token number">1.47</span> KiB       <span class="token number">2</span>  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  vender
+ <span class="token comment">// 这个时候我们再修改下css文件看下效果</span>
+ <span class="token number">2</span>ba4fc91fb13fb0a9e4e_common<span class="token punctuation">.</span>css   <span class="token number">30</span> bytes       <span class="token number">0</span>  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  common
+ <span class="token number">7</span>ffe7d4b5c650129bc62636c820a5d60<span class="token punctuation">.</span>png   <span class="token number">76.2</span> KiB          <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  
+         b5bd448011ae04c44ad9<span class="token punctuation">.</span>main<span class="token punctuation">.</span>js    <span class="token number">1.5</span> KiB       <span class="token number">1</span>  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  main
+       b8b76d60baccba2a8b74<span class="token punctuation">.</span>vender<span class="token punctuation">.</span>js   <span class="token number">1.47</span> KiB       <span class="token number">2</span>  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  vender
+       f3df7823bfd50f18a7d3<span class="token punctuation">.</span>common<span class="token punctuation">.</span>js   <span class="token number">70.2</span> KiB       <span class="token number">0</span>  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  common
+                           index<span class="token punctuation">.</span>html  <span class="token number">744</span> bytes          <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  
+<span class="token comment">// 这个时候我们发现common.css的hash值变化了，然后main.js的hash值却没有变化。起到了缓存的作用                           </span></code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.b097fbac.js" defer></script><script src="/assets/js/2.d302756d.js" defer></script><script src="/assets/js/9.b15caeed.js" defer></script>
+  </body>
+</html>
