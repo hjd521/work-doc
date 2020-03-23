@@ -18,6 +18,9 @@ module.exports = {
       },
       {
         text: 'sass', link: '/sass/'
+      },
+      {
+        text: '小程序', link: '/wx/'
       }
     ],
     sidebar: {
@@ -29,6 +32,9 @@ module.exports = {
       ],
       '/sass/': [
         ['', 'mixin']
+      ],
+      '/wx/': [
+        ['', '项目生成以及页面配置']
       ]
     }
   }  
