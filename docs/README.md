@@ -1,10 +1,10 @@
 ---
 home: true
 heroImage: /hero.png
-heroText: Hero 标题
-tagline: Hero 副标题
-actionText: 快速上手 →
-actionLink: /guide/
+heroText: 工作知识点总结
+tagline: 知识体系整理
+actionText: 快速学习 →
+actionLink: /library/
 features:
 - title: 简洁至上
   details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。

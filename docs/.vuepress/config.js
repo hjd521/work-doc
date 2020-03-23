@@ -1,7 +1,7 @@
 module.exports = {
   base: '/',
-  title: 'ui-component-知识点总结',
-  description: 'Just playing around',
+  title: '知识点记录',
+  description: '工作所用总结',
   themeConfig: {
     // sidebar: [
     //   ['/library/', 'library解析'],
@@ -15,6 +15,9 @@ module.exports = {
       },
       {
         text: 'webpack相关', link: '/mywebpack/'
+      },
+      {
+        text: 'sass', link: '/sass/'
       }
     ],
     sidebar: {
@@ -23,6 +26,9 @@ module.exports = {
       ],
       '/library/': [
         ['', 'package']
+      ],
+      '/sass/': [
+        ['', 'mixin']
       ]
     }
   }  

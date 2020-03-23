@@ -43,3 +43,25 @@ output属性决定webpack在哪里输出他的bundles，以及如何命名这些
 
 <<< @/docs/.vuepress/public/js/webpack/contenthash.js
 
+## tree-shaking
+* 目的： tree-shaking的目的是移除es6中没有用到的export代码。可以用来优化我们的打包后的代码体积
+* 实现步骤
+1. 在package.json中增加sideEffects:[],增加不能使用tree-shaking的代码文件路径，这些文件将不会被tree-shaking处理，如果所有的代码都可以被tree-shaking处理，那么设置sideEffects: false即可
+2. 在wepback4以前我们可以使用UglifyJsPlugin压缩插件来去掉冗余的代码，webpack4中只要我们设置mode：production，webpack会帮我们自动处理
+
+## 生产环境构建
+* 开发环境和生产的构建目标差异很大，开发环境需要对我们开发提供更加便捷的服务，比如source-map，hot module，生产环境我们需要优化资源，改善加载时间，提升页面展现效率。
+* 指定环境我们可以通过
+1. package.json中NODE_ENV=production || --mode production
+2. webpack.config.js中指定mode："production" || "development"
+3. 使用webpack.DefinePlugin
+ new webpack.DefinePlugin({
+   'process.env.NODE_ENV': JSON.stringify('production')
+ })
+
+ ## 代码分离
+ * 代码分离是为了使生成的bundle体积更小，以达到控制资源加载，影响加载时间。
+ 1. 通过entry来配置手动分离（这个方法不灵活，不能动态进行代码拆分且会造成多个bundle包含重复代码）
+ 2. 通过new webpack.optimize.CommonsChunkPlugin({name: 'common'}) <-4以下版本->。4以上版本通过splitChunks配置项来设置。
+
+
