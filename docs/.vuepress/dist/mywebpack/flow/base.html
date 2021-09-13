@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>webpack基础名词解析 | 知识点记录</title>
+    <meta name="description" content="工作所用总结">
+    <meta name="generator" content="VuePress 1.3.1">
+    
+    
+    <link rel="preload" href="/study/assets/css/0.styles.24359fa2.css" as="style"><link rel="preload" href="/study/assets/js/app.41f13c20.js" as="script"><link rel="preload" href="/study/assets/js/2.9eadcd03.js" as="script"><link rel="preload" href="/study/assets/js/24.fe252004.js" as="script"><link rel="prefetch" href="/study/assets/js/10.153df214.js"><link rel="prefetch" href="/study/assets/js/11.35201fee.js"><link rel="prefetch" href="/study/assets/js/12.8f6731fc.js"><link rel="prefetch" href="/study/assets/js/13.827a1c49.js"><link rel="prefetch" href="/study/assets/js/14.f1bd2177.js"><link rel="prefetch" href="/study/assets/js/15.a1bc74e4.js"><link rel="prefetch" href="/study/assets/js/16.7a024502.js"><link rel="prefetch" href="/study/assets/js/17.e202aeed.js"><link rel="prefetch" href="/study/assets/js/18.86635f51.js"><link rel="prefetch" href="/study/assets/js/19.bce81f0f.js"><link rel="prefetch" href="/study/assets/js/20.9205e148.js"><link rel="prefetch" href="/study/assets/js/21.0d4a7c5c.js"><link rel="prefetch" href="/study/assets/js/22.a6393afe.js"><link rel="prefetch" href="/study/assets/js/23.2fff949f.js"><link rel="prefetch" href="/study/assets/js/25.0a9a796f.js"><link rel="prefetch" href="/study/assets/js/26.d564ebb7.js"><link rel="prefetch" href="/study/assets/js/27.551c2140.js"><link rel="prefetch" href="/study/assets/js/28.885e6318.js"><link rel="prefetch" href="/study/assets/js/29.ffeb83e8.js"><link rel="prefetch" href="/study/assets/js/3.4f547cf8.js"><link rel="prefetch" href="/study/assets/js/30.0b805d26.js"><link rel="prefetch" href="/study/assets/js/31.9d9d0d40.js"><link rel="prefetch" href="/study/assets/js/32.80f898e3.js"><link rel="prefetch" href="/study/assets/js/33.78c58729.js"><link rel="prefetch" href="/study/assets/js/34.baa493eb.js"><link rel="prefetch" href="/study/assets/js/4.503af16b.js"><link rel="prefetch" href="/study/assets/js/5.03e3fab6.js"><link rel="prefetch" href="/study/assets/js/6.036d662b.js"><link rel="prefetch" href="/study/assets/js/7.9505e12c.js"><link rel="prefetch" href="/study/assets/js/8.a3cfb3f3.js"><link rel="prefetch" href="/study/assets/js/9.e0df58a4.js">
+    <link rel="stylesheet" href="/study/assets/css/0.styles.24359fa2.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/study/" class="home-link router-link-active"><!----> <span class="site-name">知识点记录</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/study/nodejs/" class="nav-link">
+  node
+</a></div><div class="nav-item"><a href="/study/async/" class="nav-link">
+  异步编程
+</a></div><div class="nav-item"><a href="/study/mywebpack/flow/base.html" class="nav-link router-link-exact-active router-link-active">
+  webpack相关
+</a></div><div class="nav-item"><a href="/study/sass/" class="nav-link">
+  sass
+</a></div><div class="nav-item"><a href="/study/wx/" class="nav-link">
+  小程序
+</a></div><div class="nav-item"><a href="/study/job/zjhuawei.html" class="nav-link">
+  面试题
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/study/nodejs/" class="nav-link">
+  node
+</a></div><div class="nav-item"><a href="/study/async/" class="nav-link">
+  异步编程
+</a></div><div class="nav-item"><a href="/study/mywebpack/flow/base.html" class="nav-link router-link-exact-active router-link-active">
+  webpack相关
+</a></div><div class="nav-item"><a href="/study/sass/" class="nav-link">
+  sass
+</a></div><div class="nav-item"><a href="/study/wx/" class="nav-link">
+  小程序
+</a></div><div class="nav-item"><a href="/study/job/zjhuawei.html" class="nav-link">
+  面试题
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/study/mywebpack/flow/base.html" class="active sidebar-link">webpack的概念解析</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/study/mywebpack/flow/desc.html" class="sidebar-link">webpack运行流程描述</a></li><li><a href="/study/mywebpack/loader/desc.html" class="sidebar-link">loader相关</a></li><li><a href="/study/mywebpack/plugin/tapable.html" class="sidebar-link">plugin</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="webpack基础名词解析"><a href="#webpack基础名词解析" class="header-anchor">#</a> webpack基础名词解析</h3> <h4 id="module："><a href="#module：" class="header-anchor">#</a> module：</h4> <ol><li>含义：模块，由资源(js,css,图片等)组成。</li> <li>组成：id(自身的相对路径名称)，dependencies(自身所引入的依赖),name(表示module属于哪个入口)。</li> <li>形成：资源由经过相对应的loader处理成为module。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>{
+  id: './src/title.js, //'自身相对于根路径的相对路径字符串
+  name: 'main', // entry中配置的key
+  dependencies: [], // 依赖子模块数组
+  _sourceCode: '', // 经过转化的资源内容
+}
+</code></pre></div><h5 id="chunk："><a href="#chunk：" class="header-anchor">#</a> chunk：</h5> <ol><li>含义：由一组拥有者共同入口的module组成。</li> <li>组成：name(entry中的key), entryModule(入口模块), modules(一组拥有相同name的module)。</li> <li>作用：用来生成代码块(根据modules中的module和entryModule)。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>  {
+    name: 'main', // entry中的key。
+    entryModule: module, // entry中的value对应的资源生成的module。
+    modules: [], 具有相同入口name的module的子module的集合。
+  }
+</code></pre></div><h4 id="chunk生成的代码"><a href="#chunk生成的代码" class="header-anchor">#</a> chunk生成的代码</h4> <div class="language- extra-class"><pre class="language-text"><code>  function getSource(chunk) {
+  return `
+   (() =&gt; {
+    var modules = {
+      ${
+          chunk.modules.map(module=&gt;`
+          &quot;${module.id}&quot;: (module,exports,require) =&gt; {
+            ${module._source}
+          }`).join(',')
+      }
+    };
+    var cache = {};
+    function require(moduleId) {
+      if (cache[moduleId]) {
+        return cache[moduleId].exports;
+      }
+      var module = (cache[moduleId] = {
+        exports: {},
+      });
+      modules[moduleId](module, module.exports, require);
+      return module.exports;
+    }
+    (() =&gt; {
+     ${chunk.entryModule._source}
+    })();
+  })();
+   `;
+}
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/study/mywebpack/flow/desc.html">
+        webpack运行流程描述
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/study/assets/js/app.41f13c20.js" defer></script><script src="/study/assets/js/2.9eadcd03.js" defer></script><script src="/study/assets/js/24.fe252004.js" defer></script>
+  </body>
+</html>

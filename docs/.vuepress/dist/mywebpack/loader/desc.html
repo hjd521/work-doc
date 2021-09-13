@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>loader | 知识点记录</title>
+    <meta name="description" content="工作所用总结">
+    <meta name="generator" content="VuePress 1.3.1">
+    
+    
+    <link rel="preload" href="/study/assets/css/0.styles.24359fa2.css" as="style"><link rel="preload" href="/study/assets/js/app.41f13c20.js" as="script"><link rel="preload" href="/study/assets/js/2.9eadcd03.js" as="script"><link rel="preload" href="/study/assets/js/4.503af16b.js" as="script"><link rel="prefetch" href="/study/assets/js/10.153df214.js"><link rel="prefetch" href="/study/assets/js/11.35201fee.js"><link rel="prefetch" href="/study/assets/js/12.8f6731fc.js"><link rel="prefetch" href="/study/assets/js/13.827a1c49.js"><link rel="prefetch" href="/study/assets/js/14.f1bd2177.js"><link rel="prefetch" href="/study/assets/js/15.a1bc74e4.js"><link rel="prefetch" href="/study/assets/js/16.7a024502.js"><link rel="prefetch" href="/study/assets/js/17.e202aeed.js"><link rel="prefetch" href="/study/assets/js/18.86635f51.js"><link rel="prefetch" href="/study/assets/js/19.bce81f0f.js"><link rel="prefetch" href="/study/assets/js/20.9205e148.js"><link rel="prefetch" href="/study/assets/js/21.0d4a7c5c.js"><link rel="prefetch" href="/study/assets/js/22.a6393afe.js"><link rel="prefetch" href="/study/assets/js/23.2fff949f.js"><link rel="prefetch" href="/study/assets/js/24.fe252004.js"><link rel="prefetch" href="/study/assets/js/25.0a9a796f.js"><link rel="prefetch" href="/study/assets/js/26.d564ebb7.js"><link rel="prefetch" href="/study/assets/js/27.551c2140.js"><link rel="prefetch" href="/study/assets/js/28.885e6318.js"><link rel="prefetch" href="/study/assets/js/29.ffeb83e8.js"><link rel="prefetch" href="/study/assets/js/3.4f547cf8.js"><link rel="prefetch" href="/study/assets/js/30.0b805d26.js"><link rel="prefetch" href="/study/assets/js/31.9d9d0d40.js"><link rel="prefetch" href="/study/assets/js/32.80f898e3.js"><link rel="prefetch" href="/study/assets/js/33.78c58729.js"><link rel="prefetch" href="/study/assets/js/34.baa493eb.js"><link rel="prefetch" href="/study/assets/js/5.03e3fab6.js"><link rel="prefetch" href="/study/assets/js/6.036d662b.js"><link rel="prefetch" href="/study/assets/js/7.9505e12c.js"><link rel="prefetch" href="/study/assets/js/8.a3cfb3f3.js"><link rel="prefetch" href="/study/assets/js/9.e0df58a4.js">
+    <link rel="stylesheet" href="/study/assets/css/0.styles.24359fa2.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/study/" class="home-link router-link-active"><!----> <span class="site-name">知识点记录</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/study/nodejs/" class="nav-link">
+  node
+</a></div><div class="nav-item"><a href="/study/async/" class="nav-link">
+  异步编程
+</a></div><div class="nav-item"><a href="/study/mywebpack/flow/base.html" class="nav-link">
+  webpack相关
+</a></div><div class="nav-item"><a href="/study/sass/" class="nav-link">
+  sass
+</a></div><div class="nav-item"><a href="/study/wx/" class="nav-link">
+  小程序
+</a></div><div class="nav-item"><a href="/study/job/zjhuawei.html" class="nav-link">
+  面试题
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/study/nodejs/" class="nav-link">
+  node
+</a></div><div class="nav-item"><a href="/study/async/" class="nav-link">
+  异步编程
+</a></div><div class="nav-item"><a href="/study/mywebpack/flow/base.html" class="nav-link">
+  webpack相关
+</a></div><div class="nav-item"><a href="/study/sass/" class="nav-link">
+  sass
+</a></div><div class="nav-item"><a href="/study/wx/" class="nav-link">
+  小程序
+</a></div><div class="nav-item"><a href="/study/job/zjhuawei.html" class="nav-link">
+  面试题
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/study/mywebpack/flow/base.html" class="sidebar-link">webpack的概念解析</a></li><li><a href="/study/mywebpack/flow/desc.html" class="sidebar-link">webpack运行流程描述</a></li><li><a href="/study/mywebpack/loader/desc.html" class="active sidebar-link">loader相关</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/study/mywebpack/plugin/tapable.html" class="sidebar-link">plugin</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="loader"><a href="#loader" class="header-anchor">#</a> loader</h3> <h4 id="loader的功能以及作用。"><a href="#loader的功能以及作用。" class="header-anchor">#</a> loader的功能以及作用。</h4> <ul><li>loader用来处理资源，将资源转换成js能识别的文本。通常返回一个文本，这个文本可以用module.exports进行导出一些给到的文本。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>  // 比如style-loader,当我们require一个css文件时候。我们需要做的只是将接收到的css内容放到style标签中并且插入html中。
+  function styleLoader(source) {
+    var script = `
+    let style = document.createElement(&quot;style&quot;);
+      style.innerHTML = ${JSON.stringify(source)};
+    document.head.appendChild(style);
+    module.exports = &quot;&quot;;
+    `
+  }
+</code></pre></div><h4 id="loader的分类-通过loader的执行顺序分类"><a href="#loader的分类-通过loader的执行顺序分类" class="header-anchor">#</a> loader的分类(通过loader的执行顺序分类)</h4> <ol><li>inline-loader写在require代码中的，用！分隔各个loader，最后为资源。</li> <li>post-loader,定义在module.rules中的通过enforce:post来定义。</li> <li>normal-loader,定义在module.rules中，默认就是normal-loader。</li> <li>pre-loader，定义在module.rules中，通过enforece:pre来定义。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>  module: {
+    rules: [{
+      test: /\.js$/,
+      use: [
+        {
+          loader: 'log-loader',
+          enforce: 'pre'
+        },
+        {
+          loader: 'babel-loader',
+          enforce: 'post'
+        }
+      ]
+    }]
+  }
+</code></pre></div><h4 id="loader函数中的pitch"><a href="#loader函数中的pitch" class="header-anchor">#</a> loader函数中的pitch</h4> <ul><li>loader中的pitch是一个函数，如果有返回值，那么laoder就会中断执行流程。找到preLoader执行他们的普通流程。
+<img src="/study/assets/img/loader.495d31c8.png" alt="An image"></li></ul> <h4 id="loader处理函数的实现流程"><a href="#loader处理函数的实现流程" class="header-anchor">#</a> loader处理函数的实现流程</h4> <ol><li>拿到需要处理资源的路径作为resource。</li> <li>将匹配资源的loader根据类型进行组装[post-loader, inline-loader, normal-loader, pre-loader]组装成laoder数组。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>  let fs = require('fs')
+  let resource = path.resolve(__dirname, 'src', 'main.js')
+  let rules = module.rules
+  let preLoaders = []
+  let normalLoaders = []
+  let postLoaders = []
+  let loaders = []
+  for (let rulse of rules) {
+    if (rule.test.test(resource)) {
+      if (rule.enforce === 'pre') {
+        preLoaders = [...preLoaders, ...rule.use]
+      } else if(rule.enforce === 'post') {
+        postLoaders = [...postLoaders, ...rule.use]
+      } else {
+        normalLoaders = [...normalLoaders, ...rule.use]
+      }
+    }
+  }
+  loaders = [...postLoaders, ...normalLoaders, ...preLoaders]
+  runLoaders({
+    resouce,
+    loaders,
+    context: {},
+    readResource: fs.readFile.bind(fs)
+  })
+</code></pre></div><ol start="3"><li>这个时候我们拿到了需要处理的资源resource和已经整理好的laoders，那么接下来我们执行runLoaders来用各个loader处理资源。</li></ol> <ul><li>目标1，让各个loader处理资源并且传递到下一个loader继续处理。</li> <li>目标2，loader函数中可以通过this执行一些我们定义好的方法，比如this.async()异步执行，this.callback()执行下个loader</li></ul> <ol start="4"><li>构建每个loader的上下文对象，让loader函数可以通过this来调用一些提供的方法</li></ol> <div class="language- extra-class"><pre class="language-text"><code>runLoaders({resource, loaders, context, readSource}) {
+  let loaderContext = context
+  loaderContext.resource = resource
+  loaderContext.loaders
+  loaderContext.callback = null
+  loaderContext.async = false // loader的执行是否是异步的
+  loaderContext.loaderIndex = 0 // 定义当前执行的是哪个loader
+  loaderContext.readSource = readSource
+  let processOptions = {
+    resourceBuffer: null
+  }
+  processResource(processOptions, loaderContext, () =&gt; {
+    console.log('执行完成')
+  })
+}
+</code></pre></div><ol start="4"><li>(*): 这里需要单独对loaders做一些处理，将loader的具体内容拿到，并且定义loader的raw(是否需要buffer)，normal(loader的定义), pitch(loader中的pitch函数)方便以后调用。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>  loaderContext.loaders = loaders.map(createLoader)
+  function createLoader(loader) {
+    let obj = {
+      request: loader,
+      pitchExecuted: false, // 是否已经执行过pitch方法
+      normalExecuted: false // 是否已经执行过loader。
+    }
+    obj.normal = require(loader)
+    obj.raw = obj.normal.raw
+    obj.pitch = obj.normal.pitch
+    return obj
+  }
+</code></pre></div><ol start="5"><li>拿到资源的具体内容然后顺序调用loaders中的数组(此处省略了pitch的过程，此过程和normal过程类似)</li></ol> <div class="language- extra-class"><pre class="language-text"><code>  function processResource(processOptions, loaderContext, callbak) {
+    loaderContext.loaderIndex = loaderContext.loaders.length - 1;
+    loaderContext.readResource(loaderContext.resource, function(err, buf) {
+      processOptions.resourceBuffer = buf
+      iterateNormalLoaders(processOptions, loaderContext, callback)
+    })
+  }
+</code></pre></div><ol start="6"><li>定义iterateNormalLoaders函数实现核心的loader调用逻辑。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>  function iterateNormalLoaders(processOptions, loaderContext, callback) {
+    if (loaderContext.loaderIndex &lt;0) {
+      callback(null, processOptions.resourceBuffer)
+    }
+    let curLoader = loaderContext.loaders[oaderContext.loaderIndex]
+    if (curLoader.normalExecuted) {
+      loaderContext.loaderIndex --
+      return iterateNormalLoaders(processOptions, loaderContext, callback)
+    }
+    let fn = curLoader.normal
+    curLoader.normalExecuted = true;
+    if (!normal) {
+      loaderContext.loaderIndex --
+      return iterateNormalLoaders(processOptions, loaderContext, callback)
+    }
+    handleBuf(processOptions, curLoader)
+    runSyncOrAsync(fn, processOptions, function(err) {
+      if (err) {
+        return  callback(err)
+      }
+      iterateNormalLoaders(processOptions, curLoader, loaderContext, callback)
+    })
+  }
+</code></pre></div><ol start="7"><li>根据loader需要的资源类型来转换资源类型，当laoder中定义了raw=true的时候需要将资源转换为buffer，否则为字符串</li></ol> <div class="language- extra-class"><pre class="language-text"><code>  function handleBuf(processOptions, loader) {
+    let resource = processOptions.resourceBuffer
+    if (loader.raw &amp;&amp; !Buffer.isBuffer(resource)) {
+      processOptions.resourceBuffer = Buffer.from(resource)
+    }
+    if (!loader.raw &amp;&amp; Buffer.isBuffer(resource)) {
+      processOptions.resourceBuffer = resource.toString('utf-8')
+    }
+  }
+</code></pre></div><ol start="8"><li>拿到laoder需要的资源类型以及loader的函数之后，开始正式执行loader。</li></ol> <ul><li>1: 实现每个任务流水线式执行</li> <li>2：实现loader中可以通过callback返回内容并且传递给下一个loader</li> <li>3：实现loader中可以通过async()方法异步执行，在执行完毕之后通过this.callback方法传递参数给下一个loader。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>  function runSyncOrAsync(processOptions, curLoader, loaderContext, callback) {
+    let isSync = true
+    let isDone = false
+    loaderContext.callback = function(err, ...args) {
+      isSync = false
+      callback(err, args)
+    }
+    loaderContext.async = function() {
+      isSync = false
+      return loaderContext.callback
+    }
+    let result = curLoader.call(loaderContext, processOptions.resourceBuffer)
+    if (!isResult) {
+      callback(null, result)
+    }
+  }
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/study/mywebpack/flow/desc.html" class="prev">
+        webpack运行流程描述
+      </a></span> <span class="next"><a href="/study/mywebpack/plugin/tapable.html">
+        plugin
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/study/assets/js/app.41f13c20.js" defer></script><script src="/study/assets/js/2.9eadcd03.js" defer></script><script src="/study/assets/js/4.503af16b.js" defer></script>
+  </body>
+</html>

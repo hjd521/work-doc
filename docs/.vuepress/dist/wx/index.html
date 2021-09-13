@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>小程序的项目配置以及页面配置 | 知识点记录</title>
+    <meta name="description" content="工作所用总结">
+    <meta name="generator" content="VuePress 1.3.1">
+    
+    
+    <link rel="preload" href="/study/assets/css/0.styles.24359fa2.css" as="style"><link rel="preload" href="/study/assets/js/app.41f13c20.js" as="script"><link rel="preload" href="/study/assets/js/2.9eadcd03.js" as="script"><link rel="preload" href="/study/assets/js/32.80f898e3.js" as="script"><link rel="prefetch" href="/study/assets/js/10.153df214.js"><link rel="prefetch" href="/study/assets/js/11.35201fee.js"><link rel="prefetch" href="/study/assets/js/12.8f6731fc.js"><link rel="prefetch" href="/study/assets/js/13.827a1c49.js"><link rel="prefetch" href="/study/assets/js/14.f1bd2177.js"><link rel="prefetch" href="/study/assets/js/15.a1bc74e4.js"><link rel="prefetch" href="/study/assets/js/16.7a024502.js"><link rel="prefetch" href="/study/assets/js/17.e202aeed.js"><link rel="prefetch" href="/study/assets/js/18.86635f51.js"><link rel="prefetch" href="/study/assets/js/19.bce81f0f.js"><link rel="prefetch" href="/study/assets/js/20.9205e148.js"><link rel="prefetch" href="/study/assets/js/21.0d4a7c5c.js"><link rel="prefetch" href="/study/assets/js/22.a6393afe.js"><link rel="prefetch" href="/study/assets/js/23.2fff949f.js"><link rel="prefetch" href="/study/assets/js/24.fe252004.js"><link rel="prefetch" href="/study/assets/js/25.0a9a796f.js"><link rel="prefetch" href="/study/assets/js/26.d564ebb7.js"><link rel="prefetch" href="/study/assets/js/27.551c2140.js"><link rel="prefetch" href="/study/assets/js/28.885e6318.js"><link rel="prefetch" href="/study/assets/js/29.ffeb83e8.js"><link rel="prefetch" href="/study/assets/js/3.4f547cf8.js"><link rel="prefetch" href="/study/assets/js/30.0b805d26.js"><link rel="prefetch" href="/study/assets/js/31.9d9d0d40.js"><link rel="prefetch" href="/study/assets/js/33.78c58729.js"><link rel="prefetch" href="/study/assets/js/34.baa493eb.js"><link rel="prefetch" href="/study/assets/js/4.503af16b.js"><link rel="prefetch" href="/study/assets/js/5.03e3fab6.js"><link rel="prefetch" href="/study/assets/js/6.036d662b.js"><link rel="prefetch" href="/study/assets/js/7.9505e12c.js"><link rel="prefetch" href="/study/assets/js/8.a3cfb3f3.js"><link rel="prefetch" href="/study/assets/js/9.e0df58a4.js">
+    <link rel="stylesheet" href="/study/assets/css/0.styles.24359fa2.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/study/" class="home-link router-link-active"><!----> <span class="site-name">知识点记录</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/study/nodejs/" class="nav-link">
+  node
+</a></div><div class="nav-item"><a href="/study/async/" class="nav-link">
+  异步编程
+</a></div><div class="nav-item"><a href="/study/mywebpack/flow/base.html" class="nav-link">
+  webpack相关
+</a></div><div class="nav-item"><a href="/study/sass/" class="nav-link">
+  sass
+</a></div><div class="nav-item"><a href="/study/wx/" class="nav-link router-link-exact-active router-link-active">
+  小程序
+</a></div><div class="nav-item"><a href="/study/job/zjhuawei.html" class="nav-link">
+  面试题
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/study/nodejs/" class="nav-link">
+  node
+</a></div><div class="nav-item"><a href="/study/async/" class="nav-link">
+  异步编程
+</a></div><div class="nav-item"><a href="/study/mywebpack/flow/base.html" class="nav-link">
+  webpack相关
+</a></div><div class="nav-item"><a href="/study/sass/" class="nav-link">
+  sass
+</a></div><div class="nav-item"><a href="/study/wx/" class="nav-link router-link-exact-active router-link-active">
+  小程序
+</a></div><div class="nav-item"><a href="/study/job/zjhuawei.html" class="nav-link">
+  面试题
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>小程序总结</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/wx/" class="active sidebar-link">项目生成以及页面配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/study/wx/#小程序的项目配置以及页面配置" class="sidebar-link">小程序的项目配置以及页面配置</a></li><li class="sidebar-sub-header"><a href="/study/wx/#小程序项目生成以及小程序的生命周期" class="sidebar-link">小程序项目生成以及小程序的生命周期</a></li><li class="sidebar-sub-header"><a href="/study/wx/#生命周期方法以及调用时机" class="sidebar-link">生命周期方法以及调用时机</a></li><li class="sidebar-sub-header"><a href="/study/wx/#页面" class="sidebar-link">页面</a></li><li class="sidebar-sub-header"><a href="/study/wx/#data以及setdata来做数据绑定。" class="sidebar-link">data以及setData来做数据绑定。</a></li><li class="sidebar-sub-header"><a href="/study/wx/#生命周期。" class="sidebar-link">生命周期。</a></li><li class="sidebar-sub-header"><a href="/study/wx/#页面的路由跳转" class="sidebar-link">页面的路由跳转</a></li></ul></li><li><a href="/study/wx/wxml.html" class="sidebar-link">wxml语法</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="小程序的项目配置以及页面配置"><a href="#小程序的项目配置以及页面配置" class="header-anchor">#</a> 小程序的项目配置以及页面配置</h2> <ul><li>小程序的代码构成包括四种格式，json：进行页面或者项目的配置，wxml：用来写页面，wxss：用来写样式，js：用来设置逻辑交互。</li> <li>小程序根目录下的app.json文件是对项目的整体配置包括以下几项比较重要的。</li></ul> <ol><li>pages: ['/pages/index/index', 'pages/log/index'] 设置小程序的页面路由。</li> <li>networkTimeout: 10000 设置http请求超时。</li> <li>其他的一些包括顶部样式，tab切换等等我们参考文档就好了。</li></ol> <ul><li>页面配置和程序配置基本类似，不同的是针对当前页面的一些定制化。比如导航背景颜色等等。</li></ul> <h2 id="小程序项目生成以及小程序的生命周期"><a href="#小程序项目生成以及小程序的生命周期" class="header-anchor">#</a> 小程序项目生成以及小程序的生命周期</h2> <ul><li>注册小程序，通过根目录的app.js调用App()方法即可当中可以传入一些生命周期的方法，或者自己定义的方法，以及对象。这里的所有对象在页面中都可以通过getApp()方法来获取到。</li></ul> <h2 id="生命周期方法以及调用时机"><a href="#生命周期方法以及调用时机" class="header-anchor">#</a> 生命周期方法以及调用时机</h2> <ul><li>onLaunch：小程序初始化完成时调用，参数中会带着options，用以获取从哪里进入到当前小程序，比如扫一扫等等。注意，这个方法只会调用一次，在小程序进入后台又返回之后再onShow生命周期中进行监听。</li> <li>onShow: 小程序启动或者从后台切换回来会触发。</li> <li>onHide: 小程序进入后台时候触发。</li> <li>onError: 小程序发生错误时候。</li></ul> <h2 id="页面"><a href="#页面" class="header-anchor">#</a> 页面</h2> <ul><li>小程序页面通过Page构造函数来生成一个页面，接收一个对象作为参数，其中data属性是作为数据绑定的初始数据。以及一些页面生命周期和用户操作时候的生命周期函数。</li></ul> <h2 id="data以及setdata来做数据绑定。"><a href="#data以及setdata来做数据绑定。" class="header-anchor">#</a> data以及setData来做数据绑定。</h2> <ul><li>data是数据绑定的初始数据，注意这里的value不要设置为undefined，我们要实现数据更新页面，可以使用this.setData方法。其中第一个参数为object，第二个参数是回调参数。</li></ul> <h2 id="生命周期。"><a href="#生命周期。" class="header-anchor">#</a> 生命周期。</h2> <ul><li>onLoad：页面初始加载时候触发，在页面没有销毁时候只会触发一次。其中参数为跳转此次页面所带的参数，以？传参的形式传递。</li> <li>onShow：页面初始化时候触发，或者页面进入后台之后又返回时候触发。</li> <li>onReady: 页面初始化时候触发，当页面没有被销毁时候只会触发一次。</li> <li>onHide： 页面隐藏进入后台时候触发，此时页面没有被销毁。</li> <li>onUnload：页面卸载时候触发。</li> <li>onPullDownRefresh: 监听用户的下拉动作</li> <li>onReachBottom: 监听用户的上拉触底动作函数</li> <li>onShareAppMessage: 监听用户的右上角触发动作</li> <li>onPageScroll: 监听页面滚动事件的触发。</li></ul> <h2 id="页面的路由跳转"><a href="#页面的路由跳转" class="header-anchor">#</a> 页面的路由跳转</h2> <ul><li>小程序页面是以栈的形式维护了所有的页面。其中表现如下</li></ul> <ol><li>初始化，新页面入栈。</li> <li>打开新页面（通过wx.navigateTo）新页面入栈，之前的页面onHide，新页面onLoad，onShow。</li> <li>页面重定向（通过wx.redirectTo）新页面入栈，之前的页面onUnload,新页面onLoad，onShow。</li> <li>页面返回（通过wx.navigateBack）新页面入栈，之前的页面onUnload，新页面onLoad，onShow。</li> <li>重启动（通过wx.reLaunch）新页面入栈，之前页面onUnload，且栈被清空。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>navigateTo, redirectTo 只能打开非 tabBar 页面。
+switchTab 只能打开 tabBar 页面
+reLaunch 可以打开任意页面
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/study/wx/wxml.html">
+        wxml语法
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/study/assets/js/app.41f13c20.js" defer></script><script src="/study/assets/js/2.9eadcd03.js" defer></script><script src="/study/assets/js/32.80f898e3.js" defer></script>
+  </body>
+</html>

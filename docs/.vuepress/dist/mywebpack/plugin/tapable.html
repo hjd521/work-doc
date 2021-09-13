@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>tapable: 提供webpack中plugin的事件流的库。 | 知识点记录</title>
+    <meta name="description" content="工作所用总结">
+    <meta name="generator" content="VuePress 1.3.1">
+    
+    
+    <link rel="preload" href="/study/assets/css/0.styles.24359fa2.css" as="style"><link rel="preload" href="/study/assets/js/app.41f13c20.js" as="script"><link rel="preload" href="/study/assets/js/2.9eadcd03.js" as="script"><link rel="preload" href="/study/assets/js/5.03e3fab6.js" as="script"><link rel="prefetch" href="/study/assets/js/10.153df214.js"><link rel="prefetch" href="/study/assets/js/11.35201fee.js"><link rel="prefetch" href="/study/assets/js/12.8f6731fc.js"><link rel="prefetch" href="/study/assets/js/13.827a1c49.js"><link rel="prefetch" href="/study/assets/js/14.f1bd2177.js"><link rel="prefetch" href="/study/assets/js/15.a1bc74e4.js"><link rel="prefetch" href="/study/assets/js/16.7a024502.js"><link rel="prefetch" href="/study/assets/js/17.e202aeed.js"><link rel="prefetch" href="/study/assets/js/18.86635f51.js"><link rel="prefetch" href="/study/assets/js/19.bce81f0f.js"><link rel="prefetch" href="/study/assets/js/20.9205e148.js"><link rel="prefetch" href="/study/assets/js/21.0d4a7c5c.js"><link rel="prefetch" href="/study/assets/js/22.a6393afe.js"><link rel="prefetch" href="/study/assets/js/23.2fff949f.js"><link rel="prefetch" href="/study/assets/js/24.fe252004.js"><link rel="prefetch" href="/study/assets/js/25.0a9a796f.js"><link rel="prefetch" href="/study/assets/js/26.d564ebb7.js"><link rel="prefetch" href="/study/assets/js/27.551c2140.js"><link rel="prefetch" href="/study/assets/js/28.885e6318.js"><link rel="prefetch" href="/study/assets/js/29.ffeb83e8.js"><link rel="prefetch" href="/study/assets/js/3.4f547cf8.js"><link rel="prefetch" href="/study/assets/js/30.0b805d26.js"><link rel="prefetch" href="/study/assets/js/31.9d9d0d40.js"><link rel="prefetch" href="/study/assets/js/32.80f898e3.js"><link rel="prefetch" href="/study/assets/js/33.78c58729.js"><link rel="prefetch" href="/study/assets/js/34.baa493eb.js"><link rel="prefetch" href="/study/assets/js/4.503af16b.js"><link rel="prefetch" href="/study/assets/js/6.036d662b.js"><link rel="prefetch" href="/study/assets/js/7.9505e12c.js"><link rel="prefetch" href="/study/assets/js/8.a3cfb3f3.js"><link rel="prefetch" href="/study/assets/js/9.e0df58a4.js">
+    <link rel="stylesheet" href="/study/assets/css/0.styles.24359fa2.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/study/" class="home-link router-link-active"><!----> <span class="site-name">知识点记录</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/study/nodejs/" class="nav-link">
+  node
+</a></div><div class="nav-item"><a href="/study/async/" class="nav-link">
+  异步编程
+</a></div><div class="nav-item"><a href="/study/mywebpack/flow/base.html" class="nav-link">
+  webpack相关
+</a></div><div class="nav-item"><a href="/study/sass/" class="nav-link">
+  sass
+</a></div><div class="nav-item"><a href="/study/wx/" class="nav-link">
+  小程序
+</a></div><div class="nav-item"><a href="/study/job/zjhuawei.html" class="nav-link">
+  面试题
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/study/nodejs/" class="nav-link">
+  node
+</a></div><div class="nav-item"><a href="/study/async/" class="nav-link">
+  异步编程
+</a></div><div class="nav-item"><a href="/study/mywebpack/flow/base.html" class="nav-link">
+  webpack相关
+</a></div><div class="nav-item"><a href="/study/sass/" class="nav-link">
+  sass
+</a></div><div class="nav-item"><a href="/study/wx/" class="nav-link">
+  小程序
+</a></div><div class="nav-item"><a href="/study/job/zjhuawei.html" class="nav-link">
+  面试题
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/study/mywebpack/flow/base.html" class="sidebar-link">webpack的概念解析</a></li><li><a href="/study/mywebpack/flow/desc.html" class="sidebar-link">webpack运行流程描述</a></li><li><a href="/study/mywebpack/loader/desc.html" class="sidebar-link">loader相关</a></li><li><a href="/study/mywebpack/plugin/tapable.html" class="active sidebar-link">plugin</a><ul class="sidebar-sub-headers"></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="tapable-提供webpack中plugin的事件流的库。"><a href="#tapable-提供webpack中plugin的事件流的库。" class="header-anchor">#</a> tapable: 提供webpack中plugin的事件流的库。</h3> <h4 id="功能说明"><a href="#功能说明" class="header-anchor">#</a> 功能说明</h4> <ul><li>通过tap|tapAsync|tapPromise来提供事件的注册功能</li> <li>通过call|callAsync|promise来触发注册的事件</li> <li>通过实例化hook时候指定参数，参数可以传入到注册事件的函数参数中。</li></ul> <h4 id="hook的分类"><a href="#hook的分类" class="header-anchor">#</a> hook的分类</h4> <ul><li>根据同步异步执行方式，分为同步异步hook</li> <li>根据事件执行功能分为：normal-hook，事件之间没关系，bail-hook，事件返回不为undefined则退出，waterFall-hook，上一次执行的结果会传递到下一个事件的入参。
+<img src="/study/assets/img/hook.a0dda6e0.png" alt="An image"></li></ul> <h4 id="synchook：同步hook"><a href="#synchook：同步hook" class="header-anchor">#</a> SyncHook：同步hook</h4> <div class="language- extra-class"><pre class="language-text"><code>  const {SyncHook} = require('tapable')
+  let hook = new SyncHook([name, age])
+  hook.tap('test', function(name,age) {
+    console.log(name,age)
+  })
+  hook.call('hjd', '28')
+  hook.callPromise('hjd', 28, function() {console.log('success')})
+  hook.promise('hjd', 28).then(() =&gt; {console.log('success)
+</code></pre></div><h4 id="syncbailhook-同步保险hook-有一个事件的返回值不为undefined则退出整个事件"><a href="#syncbailhook-同步保险hook-有一个事件的返回值不为undefined则退出整个事件" class="header-anchor">#</a> SyncBailHook: 同步保险hook(有一个事件的返回值不为undefined则退出整个事件)</h4> <div class="language- extra-class"><pre class="language-text"><code>  let bailHook = new SyncBailHook(['aaa'])
+  bailHook.tap('1', function(name) {
+    console.log('1', name,)
+    return 0
+  })
+  bailHook.tap('2', function(name) {
+    console.log(2, name)
+  })
+  bailHook.call('888')
+  bailHook.callAsync('555', function() {
+    console.log('success')
+  })
+</code></pre></div><h4 id="syncwaterhook-同步水流hook-每个事件返回的值如果不为undefined则会传递到下一个事件的第一个参数中"><a href="#syncwaterhook-同步水流hook-每个事件返回的值如果不为undefined则会传递到下一个事件的第一个参数中" class="header-anchor">#</a> SyncWaterHook: 同步水流hook(每个事件返回的值如果不为undefined则会传递到下一个事件的第一个参数中)</h4> <div class="language- extra-class"><pre class="language-text"><code>let syncwater = new SyncWaterfallHook(['name', 'age'])
+syncwater.tap('1', function(name,age) {
+  console.log(1, name, age)
+  return false
+})
+syncwater.tap('2', function(name, age) {
+  console.log(2, name, age)
+})
+syncwater.call('hjd', 29)
+syncwater.callAsync('test',26, function() {
+  console.log('success')
+})
+syncwater.promise('hehe', 10).then(() =&gt; {
+  console.log('ok')
+})
+</code></pre></div><h3 id="异步串行钩子-绑定的事件可以是异步的或者同步的，异步的话通过done执行下一个事件"><a href="#异步串行钩子-绑定的事件可以是异步的或者同步的，异步的话通过done执行下一个事件" class="header-anchor">#</a> 异步串行钩子(绑定的事件可以是异步的或者同步的，异步的话通过done执行下一个事件)</h3> <div class="language- extra-class"><pre class="language-text"><code>  queue.tap('tap2', function(name) {
+  console.log(name, 't2')
+})
+
+queue.tap('1', function(name) {
+  console.log(name, 't1')
+})
+queue.tapAsync('1', function(name,done) {
+  setTimeout(function() {
+    console.log(1)
+    done()
+  }, 2000)
+})
+queue.tapAsync('2', function(name,done) {
+  setTimeout(function() {
+    console.log(2)
+    done()
+  }, 1000)
+})
+queue.tap('a', function(name) {
+  console.log(name, 't3')
+})
+queue.callAsync('hjd',() =&gt; {
+  console.log('async完成')
+})
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/study/mywebpack/loader/desc.html" class="prev">
+        loader相关
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/study/assets/js/app.41f13c20.js" defer></script><script src="/study/assets/js/2.9eadcd03.js" defer></script><script src="/study/assets/js/5.03e3fab6.js" defer></script>
+  </body>
+</html>
