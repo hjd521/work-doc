@@ -11,6 +11,14 @@ module.exports = {
     // ]
     nav: [
       {
+        text: 'js相关',
+        link: '/js/new'
+      },
+      {
+        text: 'vue2源码分析',
+        link: '/vue/dom-render/base'
+      },
+      {
         text: 'node',
         link: '/nodejs/'
       },
@@ -20,6 +28,10 @@ module.exports = {
       },
       {
         text: 'webpack相关', link: '/mywebpack/flow/base'
+      },
+      {
+        text: '垃圾回收',
+        link: '/recycle/base'
       },
       {
         text: 'sass', link: '/sass/'
@@ -33,6 +45,20 @@ module.exports = {
       }
     ],
     sidebar: {
+      '/js/': [
+        {
+          title: 'js中的new方法实现',
+          path: '/js/new'
+        }
+      ],
+      '/vue/': [
+        {
+          title: 'vue中的普通dom渲染',
+          path: '/vue/dom-render/base',
+          collapsable: false, // 可选的, 默认值是 true,
+          sidebarDepth: 1    // 可选的, 默认值是 1
+        }
+      ],
       '/nodejs/': [
         {
           title: '基础概念',
@@ -101,14 +127,25 @@ module.exports = {
           path: '/mywebpack/plugin/tapable'
         }
       ],
+      '/recycle': [
+        {
+          title: '垃圾回收',
+          path: 'recycle/base'
+        },
+        {
+          title: '新生代内存',
+          path: 'recycle/new'
+        },
+        {
+          title: '老生代内存',
+          path: 'recycle/old'
+        }
+      ],
       '/job/': [
         {
           title: '浙江华为',
           path: 'zjhuawei'
         }
-      ],
-      '/library/': [
-        ['', 'package']
       ],
       '/sass/': [
         ['', 'mixin']
