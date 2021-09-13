@@ -49,6 +49,14 @@ module.exports = {
         {
           title: 'js中的new方法实现',
           path: '/js/new'
+        },
+        {
+          title: '数据类型',
+          path: '/js/base-type'
+        },
+        {
+          title: '执行上下文',
+          path: '/js/context'
         }
       ],
       '/vue/': [
