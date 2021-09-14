@@ -65,6 +65,11 @@ module.exports = {
           path: '/vue/dom-render/base',
           collapsable: false, // 可选的, 默认值是 true,
           sidebarDepth: 1    // 可选的, 默认值是 1
+        },
+        {
+          title: 'vue组件相关',
+          path: '/vue/component/register',
+          collapsable: false, // 可选的, 默认值是 true
         }
       ],
       '/nodejs/': [

@@ -52,4 +52,17 @@
     }
   }
 ```
-
+#### 精确的判断数据的类型使用Object.prototype.toString
+* 使用Object.prototype.toString.call(1) = '[object Number]'
+``` js
+  function isType(con) {
+    let toS = Object.prototype.toString
+    return function(param) {
+      return toS.call(param) === `[object ${con}]`
+    }
+  }
+  let isNumber = isType('Number')
+  let isString = isType('String')
+  let isNull = isType('Null')
+  let isUndefined = isType('Unfined')
+```
