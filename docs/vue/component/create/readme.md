@@ -138,6 +138,7 @@ init (vnode) {
     vnode,
     activeInstance
   )
+  // 组件自己去执行挂载流程，因为Vue中没有el不会继续执行$mount
   child.$mount(undefined)
 }
 ```
