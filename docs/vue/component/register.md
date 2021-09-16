@@ -1,4 +1,4 @@
-### vue组件的注册逻辑
+### vue组件的注册
 #### 全局注册
 * 通过Vue.component(id, definition)来注册一个全局组件。
 ``` js

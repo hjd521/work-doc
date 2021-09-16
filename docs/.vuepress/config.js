@@ -30,6 +30,12 @@ module.exports = {
         text: 'webpack相关', link: '/mywebpack/flow/base'
       },
       {
+        text: '网络相关', link: '/network/http/'
+      },
+      {
+        text: '微服务', link: '/micro-service/base',
+      },
+      {
         text: '垃圾回收',
         link: '/recycle/base'
       },
@@ -68,8 +74,18 @@ module.exports = {
         },
         {
           title: 'vue组件相关',
-          path: '/vue/component/register',
-          collapsable: false, // 可选的, 默认值是 true
+          // path: '/vue/component/register',
+          collapsable: true, // 可选的, 默认值是 true
+          children: [
+            'component/register',
+            'component/create/',
+            'component/async/'
+          ]
+        },
+        {
+          title: '生命周期',
+          path: '/vue/lifecycle/',
+          collapsable: false
         }
       ],
       '/nodejs/': [
@@ -138,6 +154,16 @@ module.exports = {
         {
           title: 'plugin',
           path: '/mywebpack/plugin/tapable'
+        }
+      ],
+      '/network/': [
+        {title: 'http', path: '/network/http/', collapsable: false},
+        {title: 'tcp', path: '/network/tcp/', collapsable: false}
+      ],
+      '/micro-service': [
+        {
+          title: '概念',
+          path: '/micro-service/base'
         }
       ],
       '/recycle': [

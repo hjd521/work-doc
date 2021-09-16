@@ -142,7 +142,7 @@ init (vnode) {
   child.$mount(undefined)
 }
 ```
-### createComponentInstanceForVnode,创建组件vnode实例并且传入父子组件关系
+### 通过createComponentInstanceForVnode创建组件vnode的实例并且传入父亲的一些配置信息
 ``` js
 function createComponentInstanceForVnode(vnode, activeInstance) {
   let options = {
@@ -154,3 +154,46 @@ function createComponentInstanceForVnode(vnode, activeInstance) {
   return new fn(options)
 }
 ```
+### 在_init中，通过options._isComponent判断为组件的实例化过程，需要走一些组件独特的配置合并。initInternalComponent。
+* 处理组件上的一些props，组件的children，组件的event，拿到组件上的render，构建父子关系
+* event：父子同心
+* props：组件props如何处理
+* children： scope相关
+``` js
+export function initInternalComponent (vm, options) {
+  const opts = vm.$options = Object.create(vm.constructor.options)
+  // doing this because it's faster than dynamic enumeration.
+  const parentVnode = options._parentVnode
+  opts.parent = options.parent
+  opts._parentVnode = parentVnode
+
+  const vnodeComponentOptions = parentVnode.componentOptions
+  opts.propsData = vnodeComponentOptions.propsData
+  opts._parentListeners = vnodeComponentOptions.listeners
+  opts._renderChildren = vnodeComponentOptions.children
+  opts._componentTag = vnodeComponentOptions.tag
+
+  if (options.render) {
+    opts.render = options.render
+    opts.staticRenderFns = options.staticRenderFns
+  }
+}
+```
+### 在组件创建之后自动调用$mount方法进行挂载，由于组件没有el，因此只是生成了一个vnode.elm并没有插入操作，那么这个时候组件生成的节点应该怎么插入dom呐？
+* 在createComponent中我们可以手动进行插入
+``` js
+  function createComponent(vnode,insertedVnodeQueue, parentElm) {
+    let i = vnode.data
+    if (isDef(i)) {
+      if (isDef(i=i.hook) && isDef(i=i.init)) {
+        i(vnode)
+      }
+      // 以上在组件通过createElm创建了真实dom节点之后我们要进行插入了
+      if (vnode.conponentInstance) {
+        // 将组件vnode生成的elm插入parentElm
+        insert(parentElm, vnode.elm, refElm)
+      }
+    }
+  }
+```
+* 组件的渲染流程到此就结束了。
