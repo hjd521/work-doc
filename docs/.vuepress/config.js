@@ -86,6 +86,13 @@ module.exports = {
           title: '生命周期',
           path: '/vue/lifecycle/',
           collapsable: false
+        },
+        {
+          title: '响应式',
+          children: [
+            '/vue/data/desc',
+            '/vue/data/get'
+          ]
         }
       ],
       '/nodejs/': [
